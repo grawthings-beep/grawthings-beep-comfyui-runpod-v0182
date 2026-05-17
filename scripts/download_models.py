@@ -172,8 +172,10 @@ def main() -> int:
                 raise ValueError(f"sha256 mismatch for {dest}")
             print(f"Ready: {dest}")
         except Exception as exc:
-            print(f"ERROR: failed to download {name}: {exc}", file=sys.stderr)
-            failures += 1
+            prefix = "ERROR" if required else "WARNING"
+            print(f"{prefix}: failed to download {name}: {exc}", file=sys.stderr)
+            if required:
+                failures += 1
 
     return 1 if failures else 0
 
