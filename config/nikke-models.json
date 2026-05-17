@@ -169,6 +169,26 @@
       "headers": {
         "Authorization": "Bearer ${CIVITAI_TOKEN}"
       }
+    },
+    {
+      "name": "fingering pussy illustrious",
+      "enabled": true,
+      "required": false,
+      "url": "https://civitai.com/api/download/models/2912205?type=Model&format=SafeTensor",
+      "path": "models/loras/fingering_pussy_illustrious_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${CIVITAI_TOKEN}"
+      }
+    },
+    {
+      "name": "pov watching cunnilingus illustrious",
+      "enabled": true,
+      "required": false,
+      "url": "https://civitai.com/api/download/models/2090465?type=Model&format=SafeTensor",
+      "path": "models/loras/pov_watching_cunnilingus_illustrious_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${CIVITAI_TOKEN}"
+      }
     }
   ]
 }
