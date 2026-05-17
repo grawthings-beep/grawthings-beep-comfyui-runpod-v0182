@@ -1,0 +1,94 @@
+{
+  "models": [
+    {
+      "name": "base checkpoint",
+      "enabled": true,
+      "url": "https://civitai.com/api/download/models/2940478?type=Model&format=SafeTensor&size=pruned&fp=fp16",
+      "path": "models/checkpoints/civitai_2940478_pruned_fp16.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${CIVITAI_TOKEN}"
+      }
+    },
+    {
+      "name": "ans3d",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/ans3d_ilxl_lora.safetensors",
+      "path": "models/loras/ans3d_ilxl_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    },
+    {
+      "name": "arcana",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/arcana_ilxl_lora.safetensors",
+      "path": "models/loras/arcana_ilxl_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    },
+    {
+      "name": "ein",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/ein_ilxl_lora.safetensors",
+      "path": "models/loras/ein_ilxl_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    },
+    {
+      "name": "elegg",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/elegg_ilxl_lora.safetensors",
+      "path": "models/loras/elegg_ilxl_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    },
+    {
+      "name": "mint",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/mint_ilxl_lora.safetensors",
+      "path": "models/loras/mint_ilxl_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    },
+    {
+      "name": "nayuta resume",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/nayuta_ilxl_lora_resume.safetensors",
+      "path": "models/loras/nayuta_ilxl_lora_resume.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    },
+    {
+      "name": "privaty 3d style v2",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/prvty3d_style_v2_ilxl_lora.safetensors",
+      "path": "models/loras/prvty3d_style_v2_ilxl_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    },
+    {
+      "name": "siren",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/siren_ilxl_lora.safetensors",
+      "path": "models/loras/siren_ilxl_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    },
+    {
+      "name": "velvet",
+      "enabled": true,
+      "url": "https://huggingface.co/uwgm/nikke-loras/resolve/main/velvet_ilxl_lora.safetensors",
+      "path": "models/loras/velvet_ilxl_lora.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
+    }
+  ]
+}

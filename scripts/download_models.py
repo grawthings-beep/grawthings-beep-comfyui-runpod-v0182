@@ -43,7 +43,11 @@ def is_valid_existing(path: pathlib.Path, expected_sha256: str | None) -> bool:
 
 
 def make_request(url: str, headers: dict[str, str], start_at: int):
-    request_headers = dict(headers)
+    request_headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; runpod-comfyui-downloader/1.0)",
+        "Accept": "*/*",
+    }
+    request_headers.update(headers)
     if start_at > 0:
         request_headers["Range"] = f"bytes={start_at}-"
     return urllib.request.Request(url, headers=request_headers)
