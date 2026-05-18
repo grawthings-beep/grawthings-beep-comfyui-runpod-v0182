@@ -8,6 +8,7 @@ CONFIG_DIR="${CONFIG_DIR:-/workspace/config}"
 MODEL_MANIFEST="${MODEL_MANIFEST:-${CONFIG_DIR}/models.json}"
 PORT="${PORT:-8188}"
 LISTEN="${LISTEN:-0.0.0.0}"
+PYTHON_BIN="${PYTHON_BIN:-$(command -v python || command -v python3 || command -v python3.12)}"
 
 mkdir -p "${WORKSPACE_DIR}/input" \
          "${WORKSPACE_DIR}/output" \
@@ -44,7 +45,7 @@ elif [[ -n "${MODEL_MANIFEST_URL:-}" ]]; then
 fi
 
 if [[ -f "${MODEL_MANIFEST}" ]]; then
-  python /opt/runpod-comfy/scripts/download_models.py \
+  "${PYTHON_BIN}" /opt/runpod-comfy/scripts/download_models.py \
     --manifest "${MODEL_MANIFEST}" \
     --root "${MODEL_ROOT}"
 else
@@ -52,11 +53,11 @@ else
 fi
 
 if [[ "${RUN_DEP_CHECK:-0}" == "1" ]]; then
-  python /opt/runpod-comfy/scripts/check_env.py --comfyui-dir "${COMFYUI_DIR}"
+  "${PYTHON_BIN}" /opt/runpod-comfy/scripts/check_env.py --comfyui-dir "${COMFYUI_DIR}"
 fi
 
 cd "${COMFYUI_DIR}"
-exec python main.py \
+exec "${PYTHON_BIN}" main.py \
   --listen "${LISTEN}" \
   --port "${PORT}" \
   --enable-cors-header "${COMFYUI_CORS_ORIGIN:-*}" \
