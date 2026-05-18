@@ -27,8 +27,6 @@ RUN apt-get update && \
       wget && \
     rm -rf /var/lib/apt/lists/*
 
-RUN python -m pip install --upgrade pip setuptools wheel
-
 ARG COMFYUI_REPO=https://github.com/comfyanonymous/ComfyUI.git
 ARG COMFYUI_REF=v0.18.2
 
