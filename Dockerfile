@@ -1,9 +1,8 @@
 # syntax=docker/dockerfile:1.7
 
-# Default is a broad RunPod/PyTorch CUDA 12.8 base that works well for modern
-# NVIDIA GPUs. For Blackwell-first fleets, keep CUDA 12.8+. For older-only
-# fleets, you can override this with a smaller CUDA 12.4/12.6 base.
-ARG BASE_IMAGE=runpod/pytorch:2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu22.04
+# Match the current RunPod ComfyUI stack more closely for output comparison:
+# Python 3.12, Torch 2.10, CUDA 12.8.
+ARG BASE_IMAGE=pytorch/pytorch:2.10.0-cuda12.8-cudnn9-devel
 
 FROM ${BASE_IMAGE}
 
@@ -31,7 +30,7 @@ RUN apt-get update && \
 RUN python -m pip install --upgrade pip setuptools wheel
 
 ARG COMFYUI_REPO=https://github.com/comfyanonymous/ComfyUI.git
-ARG COMFYUI_REF=master
+ARG COMFYUI_REF=v0.18.2
 
 RUN git clone --filter=blob:none "${COMFYUI_REPO}" /opt/ComfyUI && \
     cd /opt/ComfyUI && \
