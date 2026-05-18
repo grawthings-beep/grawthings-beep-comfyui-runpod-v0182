@@ -33,7 +33,8 @@ ARG COMFYUI_REF=v0.18.2
 RUN git clone --filter=blob:none "${COMFYUI_REPO}" /opt/ComfyUI && \
     cd /opt/ComfyUI && \
     git checkout "${COMFYUI_REF}" && \
-    python -m pip install -r requirements.txt
+    sed 's/#.*//' requirements.txt | tr -s '[:space:]' '\n' | grep -Ev '^(torch|torchvision|torchaudio)?$' > /tmp/comfyui-requirements-no-torch.txt && \
+    python -m pip install -r /tmp/comfyui-requirements-no-torch.txt
 
 COPY requirements-runtime.txt /tmp/requirements-runtime.txt
 RUN python -m pip install -r /tmp/requirements-runtime.txt
