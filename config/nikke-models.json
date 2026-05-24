@@ -3,8 +3,8 @@
     {
       "name": "base checkpoint",
       "enabled": true,
-      "url": "https://civitai.com/api/download/models/2940478?type=Model&format=SafeTensor&size=pruned&fp=fp16",
-      "path": "models/checkpoints/civitai_2940478_pruned_fp16.safetensors",
+      "url": "https://civitai.red/api/download/models/2837020?fileId=2723189",
+      "path": "models/checkpoints/civitai_2837020_file2723189.safetensors",
       "headers": {
         "Authorization": "Bearer ${CIVITAI_TOKEN}"
       }
