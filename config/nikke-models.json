@@ -3,11 +3,8 @@
     {
       "name": "base checkpoint",
       "enabled": true,
-      "url": "https://civitai.red/api/download/models/2837020?fileId=2723189",
-      "path": "models/checkpoints/civitai_2837020_file2723189.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
+      "url": "https://civitai.red/api/download/models/2837020?fileId=2723189&token=${CIVITAI_TOKEN}",
+      "path": "models/checkpoints/civitai_2837020_file2723189.safetensors"
     },
     {
       "name": "ans3d",
