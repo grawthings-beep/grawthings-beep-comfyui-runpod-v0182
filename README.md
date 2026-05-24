@@ -64,7 +64,13 @@ The startup script reads a manifest from one of these sources:
 
 1. `MODEL_MANIFEST_JSON`: compact JSON pasted into a RunPod env var.
 2. `MODEL_MANIFEST_URL`: raw JSON URL from S3, Cloudflare R2, Backblaze B2, GitHub raw, etc.
-3. `/workspace/config/models.json`: a file already present in the Pod.
+3. The bundled image manifest at `/opt/runpod-comfy/config/nikke-models.json`.
+4. `/workspace/config/models.json`: a file already present in the Pod.
+
+By default, the bundled manifest is copied to `/workspace/config/models.json` on
+each boot (`MODEL_MANIFEST_REFRESH=1`) so stale manifests left on a persistent
+volume do not override image updates. Set `MODEL_MANIFEST_REFRESH=0` only when
+you intentionally manage `/workspace/config/models.json` yourself.
 
 Minimal manifest:
 

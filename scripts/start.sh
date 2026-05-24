@@ -6,6 +6,8 @@ WORKSPACE_DIR="${WORKSPACE_DIR:-/workspace/ComfyUI}"
 MODEL_ROOT="${MODEL_ROOT:-${WORKSPACE_DIR}}"
 CONFIG_DIR="${CONFIG_DIR:-/workspace/config}"
 MODEL_MANIFEST="${MODEL_MANIFEST:-${CONFIG_DIR}/models.json}"
+DEFAULT_MODEL_MANIFEST="${DEFAULT_MODEL_MANIFEST:-/opt/runpod-comfy/config/nikke-models.json}"
+MODEL_MANIFEST_REFRESH="${MODEL_MANIFEST_REFRESH:-1}"
 PORT="${PORT:-8188}"
 LISTEN="${LISTEN:-0.0.0.0}"
 PYTHON_BIN="${PYTHON_BIN:-$(command -v python || command -v python3 || command -v python3.12)}"
@@ -42,6 +44,13 @@ if [[ -n "${MODEL_MANIFEST_JSON:-}" ]]; then
   printf '%s' "${MODEL_MANIFEST_JSON}" > "${MODEL_MANIFEST}"
 elif [[ -n "${MODEL_MANIFEST_URL:-}" ]]; then
   curl -fsSL "${MODEL_MANIFEST_URL}" -o "${MODEL_MANIFEST}"
+elif [[ -f "${DEFAULT_MODEL_MANIFEST}" ]]; then
+  if [[ "${MODEL_MANIFEST_REFRESH}" == "1" || ! -f "${MODEL_MANIFEST}" ]]; then
+    cp "${DEFAULT_MODEL_MANIFEST}" "${MODEL_MANIFEST}"
+    echo "Synced bundled model manifest: ${DEFAULT_MODEL_MANIFEST} -> ${MODEL_MANIFEST}"
+  else
+    echo "Using existing model manifest: ${MODEL_MANIFEST}"
+  fi
 fi
 
 if [[ -f "${MODEL_MANIFEST}" ]]; then
