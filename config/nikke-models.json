@@ -3,8 +3,11 @@
     {
       "name": "base checkpoint",
       "enabled": true,
-      "url": "https://civitai.red/api/download/models/2837020?fileId=2723189&token=${CIVITAI_TOKEN}",
-      "path": "models/checkpoints/civitai_2837020_file2723189.safetensors"
+      "url": "https://huggingface.co/uwgm/nikke-civitai-backup/resolve/main/novaAnime3dXL_v70.safetensors",
+      "path": "models/checkpoints/novaAnime3dXL_v70.safetensors",
+      "headers": {
+        "Authorization": "Bearer ${HF_TOKEN}"
+      }
     },
     {
       "name": "ans3d",
@@ -85,106 +88,6 @@
       "path": "models/loras/velvet_ilxl_lora.safetensors",
       "headers": {
         "Authorization": "Bearer ${HF_TOKEN}"
-      }
-    },
-    {
-      "name": "t rex studio v2 illustrious",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/1804885?type=Model&format=SafeTensor",
-      "path": "models/loras/t_rex_studio_v2_illustrious_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "excessive cum illustrious",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/1291450?type=Model&format=SafeTensor",
-      "path": "models/loras/excessive_cum_illustrious_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "realistic cum ilxl v1",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/1629360?type=Model&format=SafeTensor",
-      "path": "models/loras/realistic_cum_ilxl_v1_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "female masturbation illustrious",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/1388230?type=Model&format=SafeTensor",
-      "path": "models/loras/female_masturbation_illustrious_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "defeated waifu illustrious",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/1335609?type=Model&format=SafeTensor",
-      "path": "models/loras/defeated_waifu_illustrious_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "ntr illustrious v1",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/1363084?type=Model&format=SafeTensor",
-      "path": "models/loras/ntr_illustrious_v1_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "nipple pull ilxl v1",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/1980989?type=Model&format=SafeTensor",
-      "path": "models/loras/nipple_pull_ilxl_v1_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "fairy mge collection v2",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/2146447?type=Model&format=SafeTensor",
-      "path": "models/loras/fairy_mge_collection_v2_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "fingering pussy illustrious",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/2912205?type=Model&format=SafeTensor",
-      "path": "models/loras/fingering_pussy_illustrious_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
-      }
-    },
-    {
-      "name": "pov watching cunnilingus illustrious",
-      "enabled": true,
-      "required": false,
-      "url": "https://civitai.com/api/download/models/2090465?type=Model&format=SafeTensor",
-      "path": "models/loras/pov_watching_cunnilingus_illustrious_lora.safetensors",
-      "headers": {
-        "Authorization": "Bearer ${CIVITAI_TOKEN}"
       }
     }
   ]
